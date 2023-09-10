@@ -3,5 +3,5 @@ import 'package:news_app_clean_architecture/features/daily_news/domain/entities/
 import '../../../../core/constants/export.dart';
 
 abstract class ArticleRepositories {
-  Future<DataState<List<ArticleEntity>>> getNewsArticle();
+  Future<ApiRequestStatus<List<ArticleEntity>>> getNewsArticle();
 }

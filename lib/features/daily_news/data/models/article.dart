@@ -1,5 +1,9 @@
+import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:news_app_clean_architecture/features/daily_news/domain/entities/article.dart';
 
+part 'article.g.dart';
+
+@JsonSerializable()
 class ArticleModel extends ArticleEntity {
   const ArticleModel({
     int? id,
@@ -21,17 +25,10 @@ class ArticleModel extends ArticleEntity {
           content: content,
         );
 
-  factory ArticleModel.fromJson(Map<String, dynamic> map) {
-    return ArticleModel(
-      author: map['author'] ?? "",
-      title: map['title'] ?? "",
-      description: map['description'] ?? "",
-      url: map['url'] ?? "",
-      urlToImage: map['urlToImage'] ?? "",
-      publishedAt: map['publishedAt'] ?? "",
-      content: map['content'] ?? "",
-    );
-  }
+  factory ArticleModel.fromJson(Map<String, dynamic> json) =>
+      _$ArticleModelFromJson(json);
+
+  Map<String, dynamic> toJson() => _$ArticleModelToJson(this);
 
   factory ArticleModel.fromEntity(ArticleEntity entity) {
     return ArticleModel(

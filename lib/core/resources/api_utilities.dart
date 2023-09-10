@@ -1,18 +1,16 @@
-import 'dart:io';
-
-import 'package:dio/dio.dart';
-import 'package:news_app_clean_architecture/core/resources/data_state.dart';
 import 'package:retrofit/retrofit.dart';
 
-Future<DataState<T>> handleApiRequest<T>(
+import '../constants/export.dart';
+
+Future<ApiRequestStatus<T>> handleApiRequest<T>(
     Future<HttpResponse<T>> Function() apiRequest) async {
   try {
     final httpResponse = await apiRequest();
 
     if (httpResponse.response.statusCode == HttpStatus.ok) {
-      return DataSuccess(httpResponse.data);
+      return ApiRequestStatusSuccess(httpResponse.data);
     } else {
-      return DataFailed(DioException(
+      return ApiRequestStatusFailure(DioException(
         error: httpResponse.response.statusMessage,
         response: httpResponse.response,
         type: DioExceptionType.badResponse,
@@ -20,6 +18,6 @@ Future<DataState<T>> handleApiRequest<T>(
       ));
     }
   } on DioException catch (e) {
-    return DataFailed(e);
+    return ApiRequestStatusFailure(e);
   }
 }

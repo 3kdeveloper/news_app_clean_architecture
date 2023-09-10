@@ -1,6 +1,9 @@
-import 'package:flutter/material.dart';
+import 'core/constants/export.dart';
 
-void main() {
+Future<void> main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  await initDependancies();
+  Bloc.observer = AppBlocObserver();
   runApp(const MyApp());
 }
 
@@ -10,11 +13,11 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'News',
-      theme: ThemeData(
-          colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
-          useMaterial3: true),
-      // home: const ArticlesScreen(),
+      title: 'Daily News',
+      debugShowCheckedModeBanner: false,
+      theme: AppTheme.themeData,
+      initialRoute: RouteNames.dailyNewsPageRoute,
+      onGenerateRoute: sl.get<AppRouter>().generateRoute,
     );
   }
 }

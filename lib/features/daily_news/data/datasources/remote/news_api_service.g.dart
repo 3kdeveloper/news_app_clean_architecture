@@ -22,15 +22,15 @@ class _NewsApiService implements NewsApiService {
 
   @override
   Future<HttpResponse<List<ArticleModel>>> getNewsArticle({
-    String? apiKey,
     String? country,
     String? category,
+    String? apiKey,
   }) async {
     const _extra = <String, dynamic>{};
     final queryParameters = <String, dynamic>{
-      r'apikey': apiKey,
       r'country': country,
       r'category': category,
+      r'apikey': apiKey,
     };
     queryParameters.removeWhere((k, v) => v == null);
     final _headers = <String, dynamic>{};
