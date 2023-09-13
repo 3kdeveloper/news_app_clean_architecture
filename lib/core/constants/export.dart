@@ -15,7 +15,6 @@ export 'package:flutter_native_splash/flutter_native_splash.dart';
 export 'package:logger/logger.dart';
 export 'package:json_annotation/json_annotation.dart';
 export 'package:dio/dio.dart';
-export 'package:flutter_dotenv/flutter_dotenv.dart';
 export 'package:google_fonts/google_fonts.dart';
 export 'package:flutter_svg/svg.dart';
 export 'package:flutter_svg/flutter_svg.dart';
@@ -24,6 +23,7 @@ export 'package:equatable/equatable.dart';
 export 'package:cached_network_image/cached_network_image.dart';
 export 'package:fluttertoast/fluttertoast.dart';
 export 'package:freezed_annotation/freezed_annotation.dart';
+export 'package:flutter_dotenv/flutter_dotenv.dart';
 
 /// Config
 ///-- Router

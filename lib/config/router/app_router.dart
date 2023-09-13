@@ -6,7 +6,7 @@ class AppRouter {
   Route? generateRoute(RouteSettings routeSettings) {
     String route = routeSettings.name ?? '';
     switch (route) {
-      case RouteNames.dailyNewsPageRoute:
+      case RouteNames.dailyNewsPage:
         return MaterialPageRoute(
           builder: (_) => BlocProvider<DailyNewsBloc>(
               create: (context) => sl()..add(const OnGetDailyNews()),

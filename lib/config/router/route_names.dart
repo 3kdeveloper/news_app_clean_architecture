@@ -1,5 +1,5 @@
 class RouteNames {
   RouteNames._();
-  static const dailyNewsPageRoute = "/dailyNewsPageRoute";
-  static const underDevelopmentPageRoute = "/underDevelopmentPageRoute";
+  static const dailyNewsPage = "/dailyNewsPage";
+  static const underDevelopmentPage = "/underDevelopmentPage";
 }
