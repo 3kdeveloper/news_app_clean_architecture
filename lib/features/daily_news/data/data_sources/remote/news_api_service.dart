@@ -1,4 +1,5 @@
 import 'package:news_app_clean_architecture/features/daily_news/data/models/article.dart';
+import 'package:news_app_clean_architecture/features/daily_news/data/models/data.dart';
 import 'package:retrofit/retrofit.dart';
 
 import '../../../../../core/constants/export.dart';
@@ -10,7 +11,7 @@ abstract class NewsApiService {
   factory NewsApiService(Dio dio) = _NewsApiService;
 
   @GET('/top-headlines')
-  Future<HttpResponse<List<ArticleModel>>> getNewsArticle({
+  Future<HttpResponse<DataModel>> getNewsArticle({
     @Query('country') String? country,
     @Query('category') String? category,
     @Query('apikey') String? apiKey,

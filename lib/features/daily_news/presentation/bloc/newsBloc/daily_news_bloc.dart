@@ -1,7 +1,5 @@
-import 'package:freezed_annotation/freezed_annotation.dart';
-import 'package:news_app_clean_architecture/features/daily_news/domain/usecases/get_article.dart';
-
 import '../../../../../core/constants/export.dart';
+import '../../../domain/use_cases/get_article.dart';
 
 part 'daily_news_event.dart';
 part 'daily_news_state.dart';
@@ -15,13 +13,14 @@ class DailyNewsBloc extends Bloc<DailyNewsEvent, DailyNewsState> {
 
   Future<void> _onGetDailyNews(
       DailyNewsEvent event, Emitter<DailyNewsState> emit) async {
-    logger.f('I am called');
     emit(state.copyWith(apiRequestStatus: const ApiRequestStatusLoading()));
     await _getArticleUseCase.call().then((dataState) {
-      logger.f(dataState);
-      if (dataState is ApiRequestStatusSuccess && dataState.data != null) {
+      logger.f(dataState.data?.status);
+      if (dataState is ApiRequestStatusSuccess &&
+          dataState.data?.articles != null) {
         emit(state.copyWith(
-            apiRequestStatus: ApiRequestStatusSuccess(dataState.data)));
+            apiRequestStatus:
+                ApiRequestStatusSuccess(dataState.data?.articles)));
       } else {
         if (dataState.error is DioException) {
           logger.f(dataState.error.toString());

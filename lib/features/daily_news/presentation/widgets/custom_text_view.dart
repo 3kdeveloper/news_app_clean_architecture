@@ -1,10 +1,10 @@
 import '../../../../core/constants/export.dart';
 
-class TextViewWidget extends StatelessWidget {
-  const TextViewWidget(
+class CustomTextView extends StatelessWidget {
+  const CustomTextView(
       {Key? key,
       required String text,
-      required TextStyle? textStyle,
+      TextStyle? textStyle,
       bool isEllipsis = false,
       TextAlign? align,
       this.maxLines,
@@ -34,7 +34,7 @@ class TextViewWidget extends StatelessWidget {
         textScaleFactor: textScaleFactor ? DimensionsResource.d_1 : null,
         overflow: _isEllipsis ? TextOverflow.ellipsis : null,
         softWrap: true,
-        style: _textStyle,
+        style: _textStyle ?? textTheme.bodyMedium,
         maxLines: maxLines,
         textHeightBehavior:
             const TextHeightBehavior(applyHeightToFirstAscent: false),

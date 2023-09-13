@@ -1,47 +1,28 @@
-import 'package:news_app_clean_architecture/features/daily_news/presentation/widgets/text_view_widget.dart';
+import 'package:news_app_clean_architecture/features/daily_news/presentation/widgets/custom_text_view.dart';
 
 import '../../../../core/constants/export.dart';
 
 class AppBarWidget extends StatelessWidget implements PreferredSizeWidget {
-  const AppBarWidget({
-    Key? key,
-    String? title,
-    this.onTap,
-    this.hideLeading = false,
-    List<Widget>? actions,
-    this.bgColor,
-    this.boxShadow,
-    this.imageWidget,
-  })  : _title = title ?? '',
+  const AppBarWidget(
+      {Key? key, String? title, List<Widget>? actions, double? elevation})
+      : _title = title ?? '',
         _actions = actions,
+        _elevation = elevation,
         super(key: key);
 
   final String _title;
   final List<Widget>? _actions;
-  final Widget? imageWidget;
-  final Color? bgColor;
-  final bool hideLeading;
-  final BoxShadow? boxShadow;
-  final Function()? onTap;
+  final double? _elevation;
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      decoration:
-          BoxDecoration(boxShadow: boxShadow != null ? [boxShadow!] : null),
-      child: AppBar(
-        backgroundColor: bgColor ?? ColorsResource.whiteColor,
-        elevation: 0,
-        title: imageWidget ??
-            TextViewWidget(
-              text: _title,
-              textStyle: Theme.of(context).textTheme.titleMedium?.copyWith(
-                  color: ColorsResource.primaryColor,
-                  fontWeight: FontWeight.w500),
-            ),
-        centerTitle: true,
-        actions: _actions,
-      ),
+    return AppBar(
+      elevation: _elevation ?? 0.0,
+      title: CustomTextView(
+          text: _title,
+          textStyle: Theme.of(context).appBarTheme.titleTextStyle),
+      centerTitle: true,
+      actions: _actions,
     );
   }
 

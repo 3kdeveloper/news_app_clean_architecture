@@ -1,15 +1,16 @@
-import 'package:news_app_clean_architecture/features/daily_news/presentation/widgets/text_view_widget.dart';
-
 import '../../../../core/constants/export.dart';
+import 'custom_text_view.dart';
 
 class ErrorTextWidget extends StatelessWidget {
-  const ErrorTextWidget({required this.errorMessage, super.key});
-  final String? errorMessage;
+  final String _errorMessage;
+
+  const ErrorTextWidget({Key? key, required String errorMessage})
+      : _errorMessage = errorMessage,
+        super(key: key);
 
   @override
-  Widget build(BuildContext context) {
-    return TextViewWidget(
-        text: errorMessage ?? 'Something went wrong',
-        textStyle: const TextStyle(fontSize: 20));
-  }
+  Widget build(BuildContext context) => CustomTextView(
+        text: _errorMessage,
+        textStyle: textTheme.titleMedium,
+      );
 }

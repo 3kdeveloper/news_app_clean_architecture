@@ -9,12 +9,10 @@ class AppTheme {
     primaryColor: ColorsResource.primaryColor,
     colorScheme:
         ThemeData().colorScheme.copyWith(primary: ColorsResource.primaryColor),
-    appBarTheme: const AppBarTheme(
-        backgroundColor: ColorsResource.whiteColor,
-        titleTextStyle: TextStyle(
-            fontSize: DimensionsResource.d_20,
-            fontWeight: FontWeight.normal,
-            color: ColorsResource.blackColor)),
+    appBarTheme: AppBarTheme(
+        backgroundColor: ColorsResource.primaryColor,
+        titleTextStyle:
+            textTheme.titleMedium?.copyWith(fontWeight: FontWeight.w700)),
     textTheme: textTheme,
   );
 }

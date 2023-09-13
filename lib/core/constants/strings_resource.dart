@@ -1,5 +1,5 @@
 class StringsResource {
   StringsResource._();
-
-  static const strSomethingWentWrong = 'Something went wrong!';
+  static const appName = 'Daily News';
+  static const somethingWentWrong = 'Something went wrong!';
 }
