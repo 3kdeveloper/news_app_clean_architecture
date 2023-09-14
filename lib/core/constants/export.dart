@@ -7,7 +7,6 @@ export 'package:flutter/services.dart';
 
 /// Lib Imports
 export 'package:news_app_clean_architecture/main.dart';
-export 'package:news_app_clean_architecture/core/utils/injection_container.dart';
 
 /// Packages Imports
 export 'package:flutter_bloc/flutter_bloc.dart';
@@ -16,10 +15,7 @@ export 'package:logger/logger.dart';
 export 'package:json_annotation/json_annotation.dart';
 export 'package:dio/dio.dart';
 export 'package:google_fonts/google_fonts.dart';
-export 'package:flutter_svg/svg.dart';
-export 'package:flutter_svg/flutter_svg.dart';
 export 'package:get_it/get_it.dart';
-export 'package:equatable/equatable.dart';
 export 'package:cached_network_image/cached_network_image.dart';
 export 'package:fluttertoast/fluttertoast.dart';
 export 'package:freezed_annotation/freezed_annotation.dart';
@@ -51,3 +47,4 @@ export 'package:news_app_clean_architecture/core/resources/app_bloc_observer.dar
 export 'package:news_app_clean_architecture/core/user_cases/use_case.dart';
 
 ///-- Utils
+export 'package:news_app_clean_architecture/core/utils/injection_container.dart';

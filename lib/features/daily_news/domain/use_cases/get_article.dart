@@ -1,7 +1,6 @@
-import 'package:news_app_clean_architecture/features/daily_news/data/models/data.dart';
-import 'package:news_app_clean_architecture/features/daily_news/data/repositories/article_repositories_imp.dart';
-
 import '../../../../core/constants/export.dart';
+import '../../data/models/data/data.dart';
+import '../../data/repositories/article_repositories_imp.dart';
 
 class GetArticleUseCase implements UseCase<ApiRequestStatus<DataModel>, void> {
   final ArticleRepositoryImp _articleRepositories;

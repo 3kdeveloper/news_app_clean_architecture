@@ -1,7 +1,6 @@
-import 'package:news_app_clean_architecture/features/daily_news/data/models/article.dart';
-import 'package:news_app_clean_architecture/features/daily_news/domain/entities/data.dart';
-
-import '../../../../core/constants/export.dart';
+import '../../../../../core/constants/export.dart';
+import '../../../domain/entities/data.dart';
+import '../article/article.dart';
 
 part 'data.g.dart';
 

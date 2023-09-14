@@ -1,7 +1,7 @@
 import '../../../../core/constants/export.dart';
 import '../../domain/repositories/article_repositories.dart';
 import '../data_sources/remote/news_api_service.dart';
-import '../models/data.dart';
+import '../models/data/data.dart';
 
 class ArticleRepositoryImp implements ArticleRepositories {
   ArticleRepositoryImp({required NewsApiService newsApiService}) {

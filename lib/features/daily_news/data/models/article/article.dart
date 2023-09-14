@@ -1,5 +1,5 @@
-import 'package:freezed_annotation/freezed_annotation.dart';
-import 'package:news_app_clean_architecture/features/daily_news/domain/entities/article.dart';
+import '../../../../../core/constants/export.dart';
+import '../../../domain/entities/article.dart';
 
 part 'article.g.dart';
 

@@ -1,6 +1,4 @@
-import '../../../../core/constants/export.dart';
-
-class ArticleEntity extends Equatable {
+class ArticleEntity {
   final int? id;
   final String? author;
   final String? title;
@@ -20,18 +18,4 @@ class ArticleEntity extends Equatable {
     this.publishedAt,
     this.content,
   });
-
-  @override
-  List<Object?> get props {
-    return [
-      id,
-      author,
-      title,
-      description,
-      url,
-      urlToImage,
-      publishedAt,
-      content,
-    ];
-  }
 }
